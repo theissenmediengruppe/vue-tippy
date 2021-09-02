@@ -3513,6 +3513,7 @@ var applyStylesModifier = Object.assign({}, applyStyles$1, {
 tippy.setDefaultProps({
   render: render
 });
+//# sourceMappingURL=tippy.esm.js.map
 
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -3769,7 +3770,7 @@ var script = {
   watch: {
     content: function content() {
       if (this.tip) {
-        this.tip.set(this.getOptions());
+        this.tip.setProps(this.getOptions());
       }
     },
     enabled: function enabled(val) {
@@ -3794,7 +3795,7 @@ var script = {
   },
   updated: function updated() {
     if (this.tip && !this.content) {
-      this.tip.set(this.getOptions());
+      this.tip.setProps(this.getOptions());
     }
   },
   beforeDestroy: function beforeDestroy() {
@@ -4071,7 +4072,8 @@ var plugin = {
   install: function install(Vue) {
     var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
     tippyDirective = options.directive || 'tippy';
-    tippy.setDefaults(options || {});
+    console.log(tippy);
+    tippy.setDefaultProps(options || {}); // tippy.setDefaults(options || {})
 
     function createTippy(el, binding, vnode) {
       var handlers = vnode.data && vnode.data.on || vnode.componentOptions && vnode.componentOptions.listeners;

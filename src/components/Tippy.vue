@@ -36,7 +36,7 @@ export default {
   watch: {
     content() {
       if (this.tip) {
-        this.tip.set(this.getOptions());
+        this.tip.setProps(this.getOptions());
       }
     },
     enabled(val) {
@@ -61,7 +61,7 @@ export default {
   },
   updated() {
     if (this.tip && !this.content) {
-      this.tip.set(this.getOptions());
+      this.tip.setProps(this.getOptions());
     }
   },
   beforeDestroy() {
@@ -162,7 +162,7 @@ export default {
       this.options.content = this.content ? this.content : this.$refs.content;
 
       Object.assign(this.options, humps.camelizeKeys(this.$attrs));
-      
+
       this.filterOptions();
 
       if (!this.options.onShow && this.$listeners && this.$listeners["show"]) {

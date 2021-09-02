@@ -8,7 +8,9 @@ const plugin = {
   install(Vue, options = {}) {
     tippyDirective = options.directive || 'tippy'
 
-    tippy.setDefaults(options || {})
+      console.log(tippy)
+      tippy.setDefaultProps(options || {})
+    // tippy.setDefaults(options || {})
 
     function createTippy(el, binding, vnode) {
       const handlers = (vnode.data && vnode.data.on) ||

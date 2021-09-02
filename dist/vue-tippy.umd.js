@@ -4077,6 +4077,7 @@
     install: function install(Vue) {
       var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       tippyDirective = options.directive || 'tippy';
+      console.log(tippy);
       tippy.setDefaults(options || {});
 
       function createTippy(el, binding, vnode) {
